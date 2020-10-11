@@ -1,7 +1,9 @@
 # iamin
 for Bstation
 
-serverport = 8003
+server port = 8003
+
+database port = 3306
 
 datasource = iamin
 
