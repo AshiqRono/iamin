@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<form action="#" th:action="@{/adduser}" th:object="${user}" method="post">
+    <div>
+        <label for="userName">Username</label>
+        <input type="text" th:field="*{userName}" id="userName" placeholder="Username">
+        <span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></span>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="text" th:field="*{password}" id="password" placeholder="Password">
+        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+    </div>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

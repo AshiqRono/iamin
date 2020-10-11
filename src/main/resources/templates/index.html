@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>I AM IN</title>
+</head>
+<body>
+<div>
+    <h1>
+        <a href="/">Welcome to IAMIN</a>
+    </h1>
+    <h3>
+        New to IAMIN?
+    </h3>
+    <p><a href="/signup">Register your account for free</a></p>
+    <h3>
+        Already have an account?
+    </h3>
+    <p><a href="/login">Login</a></p>
+
+</div>
+<div th:switch="${posts.size()}">
+    <h2 th:case="0">No public posts yet!</h2>
+    <div th:case="*">
+        <h2>Public Posts</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Locatin</th>
+                <th>Posted By</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="post : ${posts}">
+                <td th:text="${post.location}"></td>
+                <td th:text="${post.postedBy}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
